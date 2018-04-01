@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% load bootstrap3 %}
+
+<!--load bootstrap css and js-->
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!--load bootstrap messages-->
+{% bootstrap_messages %}
+
+
+{% block title %} Sign Up | {{ block.super }} {% endblock %}
+
+{% block content %}
+<div class="container mt">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Sign Up</h3>
+            <form method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+
+                <input type="submit" class="btn btn-primary" value="Sign Up">
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3>Record how you're feelings</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores expedita iusto labore molestiae mollitia praesentium quisquam repellendus reprehenderit, sapiente vel! Accusantium ad blanditiis consequatur error facere fugit, laboriosam numquam optio!</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
